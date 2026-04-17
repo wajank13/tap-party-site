@@ -13,7 +13,7 @@
 
   <!-- Favicon -->
   <!-- TODO: update this path once assets are copied into website/assets/ or hosted via CDN -->
-  <link rel="icon" type="image/png" href="../assets/favicon.png" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,7 +30,7 @@
     <div class="container nav__inner">
       <!-- TODO: update logo src once assets are in website/assets/ or hosted -->
       <img
-        src="../assets/images/logo-main.png"
+        src="assets/images/logo-main.png"
         alt="Tap Party"
         class="nav__logo"
       />
@@ -50,7 +50,7 @@
       <div class="hero__logo-wrap">
         <!-- TODO: update logo src once assets are in website/assets/ or hosted -->
         <img
-          src="../assets/images/logo-main.png"
+          src="assets/images/logo-main.png"
           alt="Tap Party Logo"
           class="hero__logo"
         />
