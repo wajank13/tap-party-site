@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tap Party — The ultimate social drinking game. Challenges, dice, coin flips, timers, and more. Available on iOS and Android." />
+  <meta property="og:title" content="Tap Party — The Ultimate Social Drinking Game" />
+  <meta property="og:description" content="Turn any gathering into a party with interactive challenges, dice rolls, coin flips, and more." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tap-party.com" />
+
+  <title>Tap Party — The Ultimate Social Drinking Game</title>
+
+  <!-- Favicon -->
+  <!-- TODO: update this path once assets are copied into website/assets/ or hosted via CDN -->
+  <link rel="icon" type="image/png" href="../assets/favicon.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <!-- TODO: update logo src once assets are in website/assets/ or hosted -->
+      <img
+        src="../assets/images/logo-main.png"
+        alt="Tap Party"
+        class="nav__logo"
+      />
+      <ul class="nav__links">
+        <li><a href="#how-to-play">How to Play</a></li>
+        <li><a href="#premium">Premium</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="support.html">Support</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__logo-wrap">
+        <!-- TODO: update logo src once assets are in website/assets/ or hosted -->
+        <img
+          src="../assets/images/logo-main.png"
+          alt="Tap Party Logo"
+          class="hero__logo"
+        />
+      </div>
+
+      <p class="hero__eyebrow">The Party Game That Never Gets Old</p>
+
+      <h1 class="hero__title">The Ultimate Social<br />Drinking Game</h1>
+
+      <p class="hero__subtitle">
+        Turn any gathering into an unforgettable experience. Challenges, dice rolls,
+        coin flips, timers, and more — all at the tap of a finger.
+      </p>
+
+      <div class="hero__badges">
+        <!-- TODO: replace href="#" with real App Store URL once live -->
+        <a href="#" class="btn btn-primary">
+          <span class="btn-icon">🍎</span> Download on the App Store
+        </a>
+        <!-- TODO: replace href="#" with real Google Play URL once live -->
+        <a href="#" class="btn btn-secondary">
+          <span class="btn-icon">▶</span> Get it on Google Play
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- ── Features ── -->
+  <section class="features" id="features">
+    <div class="container">
+      <p class="section-label">Interactive Features</p>
+      <h2 class="section-title">More Than Just Cards</h2>
+      <p class="section-desc">
+        Every challenge is a live experience — not a static card. Tap Party puts
+        interactive mini-games right in your pocket.
+      </p>
+
+      <div class="features__grid">
+        <div class="feature-card">
+          <div class="feature-card__icon">🎲</div>
+          <div class="feature-card__title">Dice Roller</div>
+          <div class="feature-card__desc">
+            Let fate decide. Random outcomes drive who drinks and how much.
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">🪙</div>
+          <div class="feature-card__title">Coin Flip</div>
+          <div class="feature-card__desc">
+            Heads or tails — a binary choice with very real consequences.
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">⏱️</div>
+          <div class="feature-card__title">Timer Challenges</div>
+          <div class="feature-card__desc">
+            10, 20, or 30 seconds on the clock. Race before it runs out.
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">🎯</div>
+          <div class="feature-card__title">Random Player</div>
+          <div class="feature-card__desc">
+            Spin the roulette wheel. Nobody knows who's getting picked next.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- ── How to Play ── -->
+  <section class="howto" id="how-to-play">
+    <div class="container">
+      <p class="section-label">Getting Started</p>
+      <h2 class="section-title">How to Play</h2>
+      <p class="section-desc">
+        Up and running in under a minute. No setup, no rules to memorize — just play.
+      </p>
+
+      <div class="howto__steps">
+        <div class="step">
+          <div class="step__number">1</div>
+          <div>
+            <div class="step__title">Add Your Players</div>
+            <div class="step__desc">
+              Enter everyone's name and choose an intensity level — Chill, Normal, or Spicy.
+              Up to 6 players on the free tier, unlimited with Premium.
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step__number">2</div>
+          <div>
+            <div class="step__title">Take On Challenges</div>
+            <div class="step__desc">
+              Each player's turn surfaces a fresh challenge. Complete it, survive the
+              mini-game, or pass — but someone's always drinking.
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step__number">3</div>
+          <div>
+            <div class="step__title">Track & Celebrate</div>
+            <div class="step__desc">
+              Drinks are tracked per player throughout the game. See the full recap
+              at the end — including who survived and who didn't.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- ── Premium ── -->
+  <section class="premium" id="premium">
+    <div class="container">
+      <div class="premium__card">
+        <div class="premium__crown">👑</div>
+        <h2 class="premium__title">Unlock the Full Experience</h2>
+        <p class="premium__desc">
+          Go premium for access to 50+ additional challenges, all interactive
+          features, no ads, and expanded gameplay mechanics.
+        </p>
+
+        <div class="premium__pricing">
+          <span class="premium__price">$2.99</span>
+          <span class="premium__period">/ month</span>
+        </div>
+
+        <ul class="premium__perks">
+          <li><span class="perk-check">✓</span> 50+ exclusive challenges</li>
+          <li><span class="perk-check">✓</span> All interactive mini-games</li>
+          <li><span class="perk-check">✓</span> Ad-free experience</li>
+          <li><span class="perk-check">✓</span> Unlimited players</li>
+        </ul>
+
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+          <!-- TODO: replace href="#" with real App Store URL once live -->
+          <a href="#" class="btn btn-primary">
+            <span class="btn-icon">🍎</span> Get Premium on iOS
+          </a>
+          <!-- TODO: replace href="#" with real Google Play URL once live -->
+          <a href="#" class="btn btn-secondary">
+            <span class="btn-icon">▶</span> Get Premium on Android
+          </a>
+        </div>
+
+        <p style="margin-top:20px;font-size:0.8rem;color:var(--text-muted);">
+          Also available: $24.99 lifetime purchase &nbsp;·&nbsp; $0.99 session pass &nbsp;·&nbsp; Free 3-round trial
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Age Notice ── -->
+  <div class="age-notice">
+    <div class="container">
+      <p>🔞 Tap Party is intended for adults of legal drinking age. Please drink responsibly. Never drink and drive.</p>
+    </div>
+  </div>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <!-- TODO: update logo src once assets are in website/assets/ or hosted -->
+        <img
+          src="../assets/images/logo-main.png"
+          alt="Tap Party"
+          class="footer__logo"
+        />
+        <ul class="footer__links">
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="support.html">Support</a></li>
+        </ul>
+      </div>
+      <p class="footer__copy">
+        &copy; <script>document.write(new Date().getFullYear())</script> Tap Party. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
