@@ -3,64 +3,730 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tap Party Terms of Service</title>
-  <link rel="stylesheet" href="./styles.css" />
+  <meta name="description" content="Tap Party Terms of Service — the rules for using the Tap Party app and website." />
+  <title>Terms of Service — Tap Party</title>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ── Legal page layout (shared with privacy.html) ── */
+    .legal-hero {
+      padding: 64px 0 40px;
+      text-align: center;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .legal-hero__eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-purple);
+      margin-bottom: 12px;
+    }
+    .legal-hero__title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      color: var(--text-heading);
+      margin-bottom: 12px;
+    }
+    .legal-hero__meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .legal-body {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    .legal-toc {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 24px 28px;
+      margin-bottom: 48px;
+    }
+    .legal-toc__title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+    .legal-toc ol {
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .legal-toc a {
+      font-size: 0.875rem;
+      color: var(--accent-yellow);
+    }
+    .legal-toc a:hover { color: #fff; }
+
+    .legal-section {
+      margin-bottom: 48px;
+    }
+    .legal-section h2 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--text-heading);
+      border-top: 1px solid var(--card-border);
+      padding-top: 24px;
+      margin-bottom: 16px;
+    }
+    .legal-section h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--accent-yellow);
+      margin: 20px 0 8px;
+    }
+    .legal-section p {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .legal-section ul,
+    .legal-section ol {
+      padding-left: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .legal-section li {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .legal-section a {
+      color: var(--accent-yellow);
+    }
+    .legal-section a:hover { color: #fff; }
+
+    .highlight-box {
+      background: rgba(168, 85, 247, 0.08);
+      border: 1px solid rgba(168, 85, 247, 0.2);
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+      margin-bottom: 16px;
+    }
+    .highlight-box p {
+      margin: 0;
+      color: var(--text-primary) !important;
+      font-size: 0.9rem !important;
+    }
+
+    .warning-box {
+      background: rgba(250, 204, 21, 0.07);
+      border: 1px solid rgba(250, 204, 21, 0.25);
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+      margin-bottom: 16px;
+    }
+    .warning-box p {
+      margin: 0;
+      color: var(--accent-yellow) !important;
+      font-size: 0.9rem !important;
+    }
+
+    .arbitration-box {
+      background: rgba(236, 72, 153, 0.07);
+      border: 1px solid rgba(236, 72, 153, 0.25);
+      border-radius: var(--radius-sm);
+      padding: 20px 24px;
+      margin-bottom: 16px;
+    }
+    .arbitration-box p {
+      color: var(--text-primary) !important;
+      font-size: 0.9rem !important;
+      margin-bottom: 8px !important;
+    }
+    .arbitration-box p:last-child { margin-bottom: 0 !important; }
+
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 16px;
+      font-size: 0.9rem;
+    }
+    .pricing-table th {
+      text-align: left;
+      padding: 10px 14px;
+      background: rgba(255,255,255,0.04);
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .pricing-table td {
+      padding: 12px 14px;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--card-border);
+      line-height: 1.5;
+    }
+    .pricing-table td:first-child {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .contact-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 24px 28px;
+    }
+    .contact-card p { margin-bottom: 8px !important; font-size: 0.925rem !important; color: var(--text-muted) !important; }
+    .contact-card strong { color: var(--text-primary); }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="./index.html">Tap Party</a>
-      <nav class="nav-links">
-        <a href="./index.html">Home</a>
-        <a href="./privacy.html">Privacy</a>
-        <a href="./support.html">Support</a>
-      </nav>
+
+  <!-- ── Navigation ── -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="index.html">
+        <img src="assets/images/logo-main2.png" alt="Tap Party" class="nav__logo" />
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html#how-to-play">How to Play</a></li>
+        <li><a href="index.html#premium">Premium</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="support.html">Support</a></li>
+      </ul>
     </div>
-  </header>
+  </nav>
 
-  <main class="legal-page">
+  <!-- ── Hero ── -->
+  <div class="legal-hero">
     <div class="container">
-      <div class="legal-shell">
-        <h1>Terms of Service</h1>
-        <p class="effective-date">Effective Date: April 17, 2026</p>
+      <p class="legal-hero__eyebrow">Legal</p>
+      <h1 class="legal-hero__title">Terms of Service</h1>
+      <p class="legal-hero__meta">Effective Date: April 17, 2026 &nbsp;·&nbsp; Last Updated: April 17, 2026</p>
+    </div>
+  </div>
 
-        <p>
-          This is a placeholder Terms of Service page for Tap Party. It will be
-          updated with the final terms before or at launch.
-        </p>
+  <!-- ── Body ── -->
+  <div class="legal-body">
 
-        <h2>Use of the App</h2>
-        <p>
-          Tap Party is provided for entertainment purposes. Users are responsible
-          for how they use the app and for complying with local laws and platform rules.
-        </p>
+    <div class="highlight-box">
+      <p>
+        <strong>Plain English summary:</strong> By using Tap Party you agree to these terms.
+        The app is for adults of legal drinking age only. Purchases are final unless your platform's
+        refund policy applies. Disputes are resolved by individual arbitration under Illinois law —
+        no class actions.
+      </p>
+    </div>
 
-        <h2>Premium Features and Purchases</h2>
-        <p>
-          Tap Party may offer premium content, subscriptions, one-time purchases,
-          or limited-time access features through supported app marketplaces.
-        </p>
+    <div class="warning-box">
+      <p>
+        ⚠️ <strong>Please read Section 14 (Dispute Resolution &amp; Arbitration) carefully.</strong>
+        It affects your legal rights, including your ability to bring a class action lawsuit.
+      </p>
+    </div>
 
-        <h2>Availability</h2>
-        <p>
-          We may update, suspend, or modify parts of the app at any time to improve
-          performance, add features, or maintain service quality.
-        </p>
+    <!-- Table of Contents -->
+    <div class="legal-toc">
+      <p class="legal-toc__title">Contents</p>
+      <ol>
+        <li><a href="#acceptance">Acceptance of Terms</a></li>
+        <li><a href="#eligibility">Eligibility &amp; Age Requirements</a></li>
+        <li><a href="#description">Description of the Service</a></li>
+        <li><a href="#account">No Account Required</a></li>
+        <li><a href="#purchases">In-App Purchases &amp; Billing</a></li>
+        <li><a href="#subscriptions">Subscriptions &amp; Auto-Renewal</a></li>
+        <li><a href="#refunds">Refund Policy</a></li>
+        <li><a href="#acceptable-use">Acceptable Use</a></li>
+        <li><a href="#ip">Intellectual Property</a></li>
+        <li><a href="#third-parties">Third-Party Services</a></li>
+        <li><a href="#disclaimers">Disclaimers &amp; Alcohol Warning</a></li>
+        <li><a href="#liability">Limitation of Liability</a></li>
+        <li><a href="#indemnification">Indemnification</a></li>
+        <li><a href="#arbitration">Dispute Resolution &amp; Arbitration</a></li>
+        <li><a href="#governing-law">Governing Law</a></li>
+        <li><a href="#termination">Termination</a></li>
+        <li><a href="#changes">Changes to These Terms</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ol>
+    </div>
 
-        <h2>Contact</h2>
+    <!-- 1. Acceptance -->
+    <div class="legal-section" id="acceptance">
+      <h2>1. Acceptance of Terms</h2>
+      <p>
+        These Terms of Service ("Terms") are a legally binding agreement between you and
+        <strong>Janko Tech Ventures LLC</strong>, operating under the brand <strong>Tap Party</strong>
+        ("Company," "we," "our," or "us"), governing your access to and use of the Tap Party mobile
+        application (the "App") and our website at tap-party.com (the "Site"), collectively the "Services."
+      </p>
+      <p>
+        By downloading, installing, or using the App, or by accessing the Site, you confirm that you
+        have read, understood, and agree to be bound by these Terms and our
+        <a href="privacy.html">Privacy Policy</a>, which is incorporated herein by reference.
+        <strong>If you do not agree, do not use the Services.</strong>
+      </p>
+    </div>
+
+    <!-- 2. Eligibility -->
+    <div class="legal-section" id="eligibility">
+      <h2>2. Eligibility &amp; Age Requirements</h2>
+      <p>
+        Tap Party is an adult drinking game. <strong>You must be of legal drinking age in your
+        jurisdiction to use this App</strong> — that is 21 years of age or older in the United States,
+        and 18 years of age or older in most other countries.
+      </p>
+      <p>
+        By using the App, you represent and warrant that:
+      </p>
+      <ul>
+        <li>You are of legal drinking age in your jurisdiction;</li>
+        <li>You have the legal capacity to enter into a binding agreement;</li>
+        <li>Your use of the Services does not violate any applicable law or regulation.</li>
+      </ul>
+      <p>
+        We reserve the right to terminate access for any user we believe to be underage or in
+        violation of these requirements. The App displays an age confirmation screen at launch;
+        by proceeding past it you affirm you meet the age requirement.
+      </p>
+    </div>
+
+    <!-- 3. Description -->
+    <div class="legal-section" id="description">
+      <h2>3. Description of the Service</h2>
+      <p>
+        Tap Party is a social drinking game application providing challenges, interactive mini-games
+        (dice roller, coin flip, timer, random player selector), and drink-tracking features for use
+        during in-person social gatherings.
+      </p>
+      <p>
+        The Services are offered in two tiers:
+      </p>
+      <ul>
+        <li>
+          <strong>Free Tier:</strong> Access to a base set of challenges, up to 6 players per game,
+          and advertisement-supported gameplay.
+        </li>
+        <li>
+          <strong>Premium:</strong> Full challenge library (158+ challenges), all interactive
+          mini-games, no advertisements, and unlimited players. Available via monthly subscription,
+          lifetime purchase, or Party Pack (described in Section 5).
+        </li>
+      </ul>
+      <p>
+        We reserve the right to modify, update, or discontinue any feature of the Services at any
+        time, with or without notice. We are not liable for any such changes.
+      </p>
+    </div>
+
+    <!-- 4. No Account -->
+    <div class="legal-section" id="account">
+      <h2>4. No Account Required</h2>
+      <p>
+        Tap Party does not require you to create an account to use the core features of the App.
+        Player names entered during gameplay are stored only on your device and are not associated
+        with any user profile or transmitted to our servers.
+      </p>
+      <p>
+        Purchase entitlements are managed by RevenueCat and are tied to your Apple ID or Google
+        account via the respective app store. To restore a purchase on a new device, use the
+        "Restore Purchases" option within the App's settings.
+      </p>
+    </div>
+
+    <!-- 5. Purchases -->
+    <div class="legal-section" id="purchases">
+      <h2>5. In-App Purchases &amp; Billing</h2>
+      <p>The following paid options are available within the App:</p>
+
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Option</th>
+            <th>Price</th>
+            <th>Duration</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Premium Subscription</td>
+            <td>$2.99 / month</td>
+            <td>Monthly, auto-renewing</td>
+            <td>Full access; cancel anytime</td>
+          </tr>
+          <tr>
+            <td>Lifetime Access</td>
+            <td>$24.99</td>
+            <td>Permanent</td>
+            <td>One-time purchase; all future premium content included</td>
+          </tr>
+          <tr>
+            <td>Party Pack</td>
+            <td>$0.99</td>
+            <td>1 hour</td>
+            <td>Full premium access for one session; does not auto-renew</td>
+          </tr>
+          <tr>
+            <td>Free Trial</td>
+            <td>Free</td>
+            <td>3 premium rounds</td>
+            <td>One-time per device; no payment required</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        All prices are listed in US dollars and are subject to change. Applicable taxes may be
+        added at checkout by Apple App Store or Google Play. All transactions are processed by
+        Apple App Store or Google Play — Janko Tech Ventures LLC does not directly collect or
+        store payment information.
+      </p>
+    </div>
+
+    <!-- 6. Subscriptions -->
+    <div class="legal-section" id="subscriptions">
+      <h2>6. Subscriptions &amp; Auto-Renewal</h2>
+      <p>
+        The Premium monthly subscription automatically renews at the end of each billing period
+        unless cancelled at least 24 hours before the renewal date.
+      </p>
+      <p>
+        <strong>Managing your subscription:</strong>
+      </p>
+      <ul>
+        <li>
+          <strong>iOS:</strong> Go to Settings → [Your Name] → Subscriptions → Tap Party →
+          Cancel Subscription.
+        </li>
+        <li>
+          <strong>Android:</strong> Open the Google Play Store → tap your profile icon →
+          Payments &amp; subscriptions → Subscriptions → Tap Party → Cancel.
+        </li>
+      </ul>
+      <p>
+        Cancelling your subscription stops future charges but does not entitle you to a refund
+        for the current billing period. You will retain premium access until the end of the paid period.
+      </p>
+      <p>
+        The Party Pack ($0.99) is a one-time, non-recurring purchase that grants 1 hour of premium
+        access from the time of purchase. It does not auto-renew.
+      </p>
+    </div>
+
+    <!-- 7. Refunds -->
+    <div class="legal-section" id="refunds">
+      <h2>7. Refund Policy</h2>
+      <p>
+        All purchases are processed by Apple App Store or Google Play. Refund requests are governed
+        by the refund policies of the respective platform:
+      </p>
+      <ul>
+        <li>
+          <strong>Apple:</strong> Request refunds at
+          <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>.
+        </li>
+        <li>
+          <strong>Google:</strong> Request refunds through the
+          <a href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener">Google Play subscriptions page</a>
+          or contact Google Play support.
+        </li>
+      </ul>
+      <p>
+        We do not process refunds directly. If you believe you are entitled to a refund due to a
+        technical issue with the App, contact us at
+        <a href="mailto:support@tap-party.com">support@tap-party.com</a> and we will work with
+        the platform on your behalf where possible.
+      </p>
+    </div>
+
+    <!-- 8. Acceptable Use -->
+    <div class="legal-section" id="acceptable-use">
+      <h2>8. Acceptable Use</h2>
+      <p>You agree to use the Services only for their intended purpose — social entertainment among consenting adults. You agree not to:</p>
+      <ul>
+        <li>Use the Services if you are under legal drinking age in your jurisdiction;</li>
+        <li>Reverse engineer, decompile, disassemble, or attempt to derive the source code of the App;</li>
+        <li>Copy, modify, distribute, sell, or sublicense any part of the Services;</li>
+        <li>Use the Services to harass, abuse, or harm another person;</li>
+        <li>Attempt to circumvent any premium paywall or licensing mechanism;</li>
+        <li>Use automated tools, bots, or scripts to access the Services;</li>
+        <li>Use the Services in any way that violates applicable local, national, or international law.</li>
+      </ul>
+      <p>
+        We reserve the right to suspend or terminate access to any user who violates these terms
+        without notice or refund.
+      </p>
+    </div>
+
+    <!-- 9. IP -->
+    <div class="legal-section" id="ip">
+      <h2>9. Intellectual Property</h2>
+      <p>
+        The App, its content, features, challenges, design, graphics, logos, and all associated
+        intellectual property are owned by <strong>Janko Tech Ventures LLC</strong> and are protected
+        by United States and international copyright, trademark, and other intellectual property laws.
+      </p>
+      <p>
+        We grant you a limited, non-exclusive, non-transferable, revocable license to use the App
+        on your personal device solely for your personal, non-commercial entertainment purposes,
+        in accordance with these Terms.
+      </p>
+      <p>
+        The "Tap Party" name, logo, and brand are trademarks of Janko Tech Ventures LLC. You may
+        not use our trademarks without prior written permission.
+      </p>
+      <p>
+        Nothing in these Terms transfers any ownership rights to you. All rights not expressly
+        granted are reserved by Janko Tech Ventures LLC.
+      </p>
+    </div>
+
+    <!-- 10. Third Parties -->
+    <div class="legal-section" id="third-parties">
+      <h2>10. Third-Party Services</h2>
+      <p>
+        The App uses third-party services including RevenueCat (purchase management), Google AdMob
+        (advertising), and Firebase (analytics). Your use of the App is also subject to the terms
+        of service of Apple App Store or Google Play through which you downloaded it.
+      </p>
+      <p>
+        We are not responsible for the practices, content, or availability of any third-party
+        services. Links or integrations with third-party services do not constitute our endorsement.
+      </p>
+      <p>
+        For details on how third-party services handle your data, see our
+        <a href="privacy.html">Privacy Policy</a>.
+      </p>
+    </div>
+
+    <!-- 11. Disclaimers -->
+    <div class="legal-section" id="disclaimers">
+      <h2>11. Disclaimers &amp; Alcohol Warning</h2>
+
+      <h3>Alcohol Safety</h3>
+      <p>
+        Tap Party is a game. <strong>We do not encourage excessive alcohol consumption, drinking and
+        driving, or any behavior that puts you or others at risk.</strong> Always drink responsibly,
+        know your limits, arrange safe transportation, and never drive under the influence of alcohol
+        or any substance.
+      </p>
+      <p>
+        We are not responsible for any injury, illness, property damage, or other harm arising from
+        the consumption of alcohol or participation in game challenges.
+      </p>
+
+      <h3>No Warranties</h3>
+      <p>
+        THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE," WITHOUT WARRANTY OF ANY KIND, EXPRESS
+        OR IMPLIED. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, JANKO TECH VENTURES LLC
+        DISCLAIMS ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+      </p>
+      <p>
+        We do not warrant that the App will be uninterrupted, error-free, or free of viruses or
+        other harmful components. We do not warrant that any defects will be corrected.
+      </p>
+    </div>
+
+    <!-- 12. Liability -->
+    <div class="legal-section" id="liability">
+      <h2>12. Limitation of Liability</h2>
+      <p>
+        TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL JANKO TECH VENTURES LLC,
+        ITS OFFICERS, MEMBERS, EMPLOYEES, OR AGENTS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL,
+        CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, DATA, OR
+        GOODWILL, ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF THE SERVICES, EVEN IF WE HAVE BEEN
+        ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+      </p>
+      <p>
+        OUR TOTAL LIABILITY TO YOU FOR ALL CLAIMS ARISING UNDER THESE TERMS SHALL NOT EXCEED THE
+        GREATER OF: (A) THE AMOUNT YOU PAID US IN THE TWELVE (12) MONTHS PRIOR TO THE CLAIM, OR
+        (B) TEN DOLLARS ($10.00).
+      </p>
+      <p>
+        Some jurisdictions do not allow certain limitations of liability, so the above may not apply
+        to you in full. In those jurisdictions, our liability is limited to the greatest extent
+        permitted by law.
+      </p>
+    </div>
+
+    <!-- 13. Indemnification -->
+    <div class="legal-section" id="indemnification">
+      <h2>13. Indemnification</h2>
+      <p>
+        You agree to defend, indemnify, and hold harmless Janko Tech Ventures LLC and its officers,
+        members, employees, and agents from and against any and all claims, damages, obligations,
+        losses, liabilities, costs, and expenses (including reasonable attorneys' fees) arising from:
+      </p>
+      <ul>
+        <li>Your use of or access to the Services;</li>
+        <li>Your violation of these Terms;</li>
+        <li>Your violation of any applicable law or the rights of any third party;</li>
+        <li>Any harm caused by your consumption of alcohol or participation in game challenges.</li>
+      </ul>
+    </div>
+
+    <!-- 14. Arbitration -->
+    <div class="legal-section" id="arbitration">
+      <h2>14. Dispute Resolution &amp; Arbitration</h2>
+
+      <div class="arbitration-box">
         <p>
-          For questions regarding these terms, contact:
-          <a href="mailto:support@tap-party.com">support@tap-party.com</a>
+          <strong>PLEASE READ THIS SECTION CAREFULLY.</strong> It requires disputes to be resolved
+          through binding individual arbitration and waives your right to participate in a class action.
+          If you do not agree, do not use the Services.
         </p>
       </div>
-    </div>
-  </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© 2026 Tap Party</div>
-      <div><a href="./index.html">Back to Home</a></div>
+      <h3>Informal Resolution First</h3>
+      <p>
+        Before initiating any formal dispute, you agree to contact us at
+        <a href="mailto:support@tap-party.com">support@tap-party.com</a> and give us 30 days to
+        attempt to resolve the issue informally. Most concerns can be resolved this way.
+      </p>
+
+      <h3>Binding Arbitration</h3>
+      <p>
+        If informal resolution fails, any dispute, claim, or controversy arising out of or relating
+        to these Terms or the Services — including questions of arbitrability — shall be resolved
+        by binding individual arbitration administered by the American Arbitration Association
+        ("AAA") under its Consumer Arbitration Rules, which are available at
+        <a href="https://www.adr.org" target="_blank" rel="noopener">adr.org</a>.
+      </p>
+      <p>
+        The arbitration will be conducted in English and, unless you and we agree otherwise, will
+        take place in Cook County, Illinois, or via videoconference at either party's election.
+        The arbitrator's decision shall be final and binding and may be entered as a judgment in
+        any court of competent jurisdiction.
+      </p>
+      <p>
+        <strong>Filing fees:</strong> If you are a consumer and your claim is $10,000 or less,
+        we will pay all AAA filing, administrative, and arbitrator fees unless the arbitrator
+        finds your claim frivolous.
+      </p>
+
+      <h3>Class Action Waiver</h3>
+      <p>
+        <strong>YOU AND JANKO TECH VENTURES LLC EACH AGREE THAT ANY DISPUTE RESOLUTION PROCEEDING
+        WILL BE CONDUCTED ONLY ON AN INDIVIDUAL BASIS AND NOT AS A CLASS, CONSOLIDATED, OR
+        REPRESENTATIVE ACTION.</strong> If this class action waiver is found unenforceable, then
+        the entirety of this arbitration provision shall be null and void.
+      </p>
+
+      <h3>Exceptions</h3>
+      <p>
+        Notwithstanding the above, either party may bring an individual action in small claims court
+        for disputes within the court's jurisdiction, and either party may seek emergency injunctive
+        relief in a court of competent jurisdiction to prevent irreparable harm pending arbitration.
+      </p>
+
+      <h3>Opt-Out</h3>
+      <p>
+        You may opt out of this arbitration agreement within 30 days of first accepting these Terms
+        by emailing <a href="mailto:support@tap-party.com">support@tap-party.com</a> with the
+        subject line "Arbitration Opt-Out" and your name. Opting out does not affect other parts
+        of these Terms.
+      </p>
+    </div>
+
+    <!-- 15. Governing Law -->
+    <div class="legal-section" id="governing-law">
+      <h2>15. Governing Law</h2>
+      <p>
+        These Terms are governed by and construed in accordance with the laws of the State of
+        <strong>Illinois</strong>, without regard to its conflict of law principles. To the extent
+        that any dispute is not subject to arbitration under Section 14, you and Janko Tech Ventures LLC
+        consent to the exclusive jurisdiction of the state and federal courts located in
+        Cook County, Illinois.
+      </p>
+    </div>
+
+    <!-- 16. Termination -->
+    <div class="legal-section" id="termination">
+      <h2>16. Termination</h2>
+      <p>
+        We may suspend or terminate your access to the Services at any time, with or without cause
+        or notice, including for violations of these Terms. Upon termination, your right to use the
+        Services ceases immediately.
+      </p>
+      <p>
+        Termination does not entitle you to a refund of any paid amounts. Sections covering
+        Intellectual Property, Disclaimers, Limitation of Liability, Indemnification, and
+        Dispute Resolution survive any termination of these Terms.
+      </p>
+      <p>
+        You may stop using the Services at any time. If you have an active subscription, cancel it
+        through your device's app store settings (see Section 6) to avoid future charges.
+      </p>
+    </div>
+
+    <!-- 17. Changes -->
+    <div class="legal-section" id="changes">
+      <h2>17. Changes to These Terms</h2>
+      <p>
+        We reserve the right to modify these Terms at any time. When we make material changes, we
+        will update the "Last Updated" date above and may provide notice within the App. Your
+        continued use of the Services after changes take effect constitutes acceptance of the
+        revised Terms.
+      </p>
+      <p>
+        If you do not agree to the revised Terms, you must stop using the Services. We encourage
+        you to review this page periodically.
+      </p>
+    </div>
+
+    <!-- 18. Contact -->
+    <div class="legal-section" id="contact">
+      <h2>18. Contact Us</h2>
+      <p>
+        Questions about these Terms? Reach us at:
+      </p>
+      <div class="contact-card">
+        <p><strong>Janko Tech Ventures LLC</strong></p>
+        <p>Brand: Tap Party</p>
+        <p>Email: <a href="mailto:support@tap-party.com">support@tap-party.com</a></p>
+        <p>Website: <a href="https://tap-party.com">tap-party.com</a></p>
+      </div>
+    </div>
+
+  </div><!-- /legal-body -->
+
+  <!-- ── Age Notice ── -->
+  <div class="age-notice">
+    <div class="container">
+      <p>🔞 Tap Party is intended for adults of legal drinking age. Please drink responsibly. Never drink and drive.</p>
+    </div>
+  </div>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <a href="index.html">
+          <img src="assets/images/logo-main2.png" alt="Tap Party" class="footer__logo" />
+        </a>
+        <ul class="footer__links">
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="support.html">Support</a></li>
+        </ul>
+      </div>
+      <p class="footer__copy">
+        &copy; <script>document.write(new Date().getFullYear())</script> Janko Tech Ventures LLC. Tap Party is a brand of Janko Tech Ventures LLC. All rights reserved.
+      </p>
     </div>
   </footer>
+
 </body>
 </html>
