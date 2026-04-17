@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Tap Party — The ultimate social drinking game. Challenges, dice, coin flips, timers, and more. Available on iOS and Android." />
+  <meta name="description" content="Tap Party — The ultimate social drinking game. 332 challenges, dice, coin flips, timers, and more. Available on iOS and Android." />
   <meta property="og:title" content="Tap Party — The Ultimate Social Drinking Game" />
   <meta property="og:description" content="Turn any gathering into a party with interactive challenges, dice rolls, coin flips, and more." />
   <meta property="og:type" content="website" />
@@ -12,7 +12,6 @@
   <title>Tap Party — The Ultimate Social Drinking Game</title>
 
   <!-- Favicon -->
-  <!-- TODO: update this path once assets are copied into website/assets/ or hosted via CDN -->
   <link rel="icon" type="image/png" href="assets/favicon.png" />
 
   <!-- Fonts -->
@@ -28,7 +27,6 @@
   <!-- ── Navigation ── -->
   <nav class="nav">
     <div class="container nav__inner">
-      <!-- TODO: update logo src once assets are in website/assets/ or hosted -->
       <img
         src="assets/images/logo-main2.png"
         alt="Tap Party"
@@ -48,7 +46,6 @@
   <section class="hero">
     <div class="container">
       <div class="hero__logo-wrap">
-        <!-- TODO: update logo src once assets are in website/assets/ or hosted -->
         <img
           src="assets/images/logo-main2.png"
           alt="Tap Party Logo"
@@ -65,14 +62,28 @@
         coin flips, timers, and more — all at the tap of a finger.
       </p>
 
-      <div class="hero__badges">
-        <!-- TODO: replace href="#" with real App Store URL once live -->
-        <a href="#" class="btn btn-primary">
-          <span class="btn-icon">🍎</span> Download on the App Store
+      <div class="store-badges">
+        <!--
+          TODO: Replace href="#" with your real App Store URL once live.
+          Official badge guidelines: https://developer.apple.com/app-store/marketing/guidelines/
+        -->
+        <a href="#" class="badge-store">
+          <span class="badge-store__logo">&#xf8ff;</span>
+          <span class="badge-store__text">
+            <span class="badge-store__sub">Download on the</span>
+            <span class="badge-store__name">App Store</span>
+          </span>
         </a>
-        <!-- TODO: replace href="#" with real Google Play URL once live -->
-        <a href="#" class="btn btn-secondary">
-          <span class="btn-icon">▶</span> Get it on Google Play
+        <!--
+          TODO: Replace href="#" with your real Google Play URL once live.
+          Official badge guidelines: https://play.google.com/intl/en_us/badges/
+        -->
+        <a href="#" class="badge-store">
+          <span class="badge-store__logo">▶</span>
+          <span class="badge-store__text">
+            <span class="badge-store__sub">Get it on</span>
+            <span class="badge-store__name">Google Play</span>
+          </span>
         </a>
       </div>
     </div>
@@ -128,6 +139,70 @@
 
   <hr class="divider" />
 
+  <!-- ── Challenge Examples ── -->
+  <section class="features" id="challenges">
+    <div class="container">
+      <p class="section-label">332 Challenges</p>
+      <h2 class="section-title">Something for Every Vibe</h2>
+      <p class="section-desc">
+        From ice-breakers to bold dares — challenges come in three intensities
+        so every crew can find their level.
+      </p>
+
+      <div class="challenges__grid">
+        <div class="challenge-card">
+          <div class="challenge-card__tags">
+            <span class="tag tag--chill">Chill</span>
+            <span class="tag tag--free">Free</span>
+          </div>
+          <div class="challenge-card__title">Cheers to the Host</div>
+          <div class="challenge-card__desc">
+            Everyone raises their glass to the host. Host takes a well-earned sip.
+          </div>
+        </div>
+
+        <div class="challenge-card">
+          <div class="challenge-card__tags">
+            <span class="tag tag--normal">Normal</span>
+            <span class="tag tag--free">Free</span>
+          </div>
+          <div class="challenge-card__title">Table Tap</div>
+          <div class="challenge-card__desc">
+            Everyone taps the table. Last person to tap has to drink.
+          </div>
+        </div>
+
+        <div class="challenge-card">
+          <div class="challenge-card__tags">
+            <span class="tag tag--normal">Normal</span>
+            <span class="tag tag--premium">Premium</span>
+          </div>
+          <div class="challenge-card__title">Two Truths, One Sip</div>
+          <div class="challenge-card__desc">
+            Share two truths and one lie. Anyone who guesses wrong takes a sip.
+          </div>
+        </div>
+
+        <div class="challenge-card">
+          <div class="challenge-card__tags">
+            <span class="tag tag--lush">Lush</span>
+            <span class="tag tag--premium">Premium</span>
+          </div>
+          <div class="challenge-card__title">Truth or Sip</div>
+          <div class="challenge-card__desc">
+            Answer a bold question honestly — or take 2 sips. No hiding allowed.
+          </div>
+        </div>
+      </div>
+
+      <p class="challenges__cta">
+        <strong>158 premium challenges</strong> unlock with any paid plan. Free tier includes challenges to get the party started.
+      </p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
   <!-- ── How to Play ── -->
   <section class="howto" id="how-to-play">
     <div class="container">
@@ -143,7 +218,7 @@
           <div>
             <div class="step__title">Add Your Players</div>
             <div class="step__desc">
-              Enter everyone's name and choose an intensity level — Chill, Normal, or Spicy.
+              Enter everyone's name and choose an intensity level — Chill, Normal, or Lush.
               Up to 6 players on the free tier, unlimited with Premium.
             </div>
           </div>
@@ -163,7 +238,7 @@
         <div class="step">
           <div class="step__number">3</div>
           <div>
-            <div class="step__title">Track & Celebrate</div>
+            <div class="step__title">Track &amp; Celebrate</div>
             <div class="step__desc">
               Drinks are tracked per player throughout the game. See the full recap
               at the end — including who survived and who didn't.
@@ -183,7 +258,7 @@
         <div class="premium__crown">👑</div>
         <h2 class="premium__title">Unlock the Full Experience</h2>
         <p class="premium__desc">
-          Go premium for access to 50+ additional challenges, all interactive
+          Go premium for access to 158 additional challenges, all interactive
           features, no ads, and expanded gameplay mechanics.
         </p>
 
@@ -193,25 +268,35 @@
         </div>
 
         <ul class="premium__perks">
-          <li><span class="perk-check">✓</span> 50+ exclusive challenges</li>
+          <li><span class="perk-check">✓</span> 158 exclusive challenges</li>
           <li><span class="perk-check">✓</span> All interactive mini-games</li>
           <li><span class="perk-check">✓</span> Ad-free experience</li>
           <li><span class="perk-check">✓</span> Unlimited players</li>
         </ul>
 
-        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
           <!-- TODO: replace href="#" with real App Store URL once live -->
-          <a href="#" class="btn btn-primary">
-            <span class="btn-icon">🍎</span> Get Premium on iOS
+          <a href="#" class="badge-store">
+            <span class="badge-store__logo">&#xf8ff;</span>
+            <span class="badge-store__text">
+              <span class="badge-store__sub">Download on the</span>
+              <span class="badge-store__name">App Store</span>
+            </span>
           </a>
           <!-- TODO: replace href="#" with real Google Play URL once live -->
-          <a href="#" class="btn btn-secondary">
-            <span class="btn-icon">▶</span> Get Premium on Android
+          <a href="#" class="badge-store">
+            <span class="badge-store__logo">▶</span>
+            <span class="badge-store__text">
+              <span class="badge-store__sub">Get it on</span>
+              <span class="badge-store__name">Google Play</span>
+            </span>
           </a>
         </div>
 
         <p style="margin-top:20px;font-size:0.8rem;color:var(--text-muted);">
-          Also available: $24.99 lifetime purchase &nbsp;·&nbsp; $0.99 session pass &nbsp;·&nbsp; Free 3-round trial
+          Also available: &nbsp;<strong style="color:var(--text-primary)">$24.99 lifetime</strong> &nbsp;·&nbsp;
+          <strong style="color:var(--text-primary)">Party Pack $0.99</strong> — 1 hour of premium access &nbsp;·&nbsp;
+          Free 3-round trial
         </p>
       </div>
     </div>
@@ -228,9 +313,8 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__inner">
-        <!-- TODO: update logo src once assets are in website/assets/ or hosted -->
         <img
-          src="../assets/images/logo-main.png"
+          src="assets/images/logo-main2.png"
           alt="Tap Party"
           class="footer__logo"
         />
