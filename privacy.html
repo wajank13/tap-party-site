@@ -3,64 +3,577 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tap Party Privacy Policy</title>
-  <link rel="stylesheet" href="./styles.css" />
+  <meta name="description" content="Tap Party Privacy Policy — how we collect, use, and protect your information." />
+  <title>Privacy Policy — Tap Party</title>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ── Legal page layout ── */
+    .legal-hero {
+      padding: 64px 0 40px;
+      text-align: center;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .legal-hero__eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-purple);
+      margin-bottom: 12px;
+    }
+    .legal-hero__title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      color: var(--text-heading);
+      margin-bottom: 12px;
+    }
+    .legal-hero__meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .legal-body {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    .legal-toc {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 24px 28px;
+      margin-bottom: 48px;
+    }
+    .legal-toc__title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+    .legal-toc ol {
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .legal-toc a {
+      font-size: 0.875rem;
+      color: var(--accent-yellow);
+    }
+    .legal-toc a:hover { color: #fff; }
+
+    .legal-section {
+      margin-bottom: 48px;
+    }
+    .legal-section h2 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--text-heading);
+      margin-bottom: 16px;
+      padding-top: 8px;
+      border-top: 1px solid var(--card-border);
+      padding-top: 24px;
+    }
+    .legal-section h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--accent-yellow);
+      margin: 20px 0 8px;
+    }
+    .legal-section p {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .legal-section ul,
+    .legal-section ol {
+      padding-left: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .legal-section li {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .legal-section a {
+      color: var(--accent-yellow);
+    }
+    .legal-section a:hover { color: #fff; }
+
+    .highlight-box {
+      background: rgba(168, 85, 247, 0.08);
+      border: 1px solid rgba(168, 85, 247, 0.2);
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+      margin-bottom: 16px;
+    }
+    .highlight-box p {
+      margin: 0;
+      color: var(--text-primary) !important;
+      font-size: 0.9rem !important;
+    }
+
+    .third-party-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      margin-bottom: 14px;
+    }
+    .third-party-card h3 {
+      margin: 0 0 8px !important;
+      border: none !important;
+    }
+    .third-party-card p {
+      margin: 0 0 6px !important;
+    }
+
+    .contact-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 24px 28px;
+    }
+    .contact-card p { margin-bottom: 8px !important; }
+    .contact-card strong { color: var(--text-primary); }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="./index.html">Tap Party</a>
-      <nav class="nav-links">
-        <a href="./index.html">Home</a>
-        <a href="./terms.html">Terms</a>
-        <a href="./support.html">Support</a>
-      </nav>
-    </div>
-  </header>
 
-  <main class="legal-page">
+  <!-- ── Navigation ── -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="index.html">
+        <img src="assets/images/logo-main2.png" alt="Tap Party" class="nav__logo" />
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html#how-to-play">How to Play</a></li>
+        <li><a href="index.html#premium">Premium</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="support.html">Support</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <div class="legal-hero">
     <div class="container">
-      <div class="legal-shell">
-        <h1>Privacy Policy</h1>
-        <p class="effective-date">Effective Date: April 17, 2026</p>
-
-        <p>
-          This is a placeholder privacy policy page for Tap Party. It will be
-          updated with the final policy language before or at launch.
-        </p>
-
-        <h2>Information We May Collect</h2>
-        <p>
-          Tap Party may collect limited information related to app usage,
-          purchases, support inquiries, analytics, and technical performance.
-        </p>
-
-        <h2>How Information May Be Used</h2>
-        <p>
-          Information may be used to operate the app, improve features, support users,
-          validate purchases, and maintain service reliability.
-        </p>
-
-        <h2>Third-Party Services</h2>
-        <p>
-          Tap Party may use third-party services for app distribution, analytics,
-          crash reporting, advertising, and subscription management.
-        </p>
-
-        <h2>Contact</h2>
-        <p>
-          For privacy questions, contact:
-          <a href="mailto:support@tap-party.com">support@tap-party.com</a>
-        </p>
-      </div>
+      <p class="legal-hero__eyebrow">Legal</p>
+      <h1 class="legal-hero__title">Privacy Policy</h1>
+      <p class="legal-hero__meta">Effective Date: April 17, 2026 &nbsp;·&nbsp; Last Updated: April 17, 2026</p>
     </div>
-  </main>
+  </div>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© 2026 Tap Party</div>
-      <div><a href="./index.html">Back to Home</a></div>
+  <!-- ── Body ── -->
+  <div class="legal-body">
+
+    <div class="highlight-box">
+      <p>
+        <strong>Plain English summary:</strong> Tap Party is designed to be played locally with friends.
+        Player names never leave your device. We collect limited data for purchases, ads, and app
+        improvement — all disclosed in detail below.
+      </p>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="legal-toc">
+      <p class="legal-toc__title">Contents</p>
+      <ol>
+        <li><a href="#about">About This Policy</a></li>
+        <li><a href="#data-collected">Information We Collect</a></li>
+        <li><a href="#how-we-use">How We Use Your Information</a></li>
+        <li><a href="#third-parties">Third-Party Services</a></li>
+        <li><a href="#sharing">Data Sharing &amp; Disclosure</a></li>
+        <li><a href="#advertising">Advertising &amp; Tracking</a></li>
+        <li><a href="#retention">Data Retention</a></li>
+        <li><a href="#children">Children's Privacy</a></li>
+        <li><a href="#your-rights">Your Privacy Rights</a></li>
+        <li><a href="#california">California Residents (CCPA)</a></li>
+        <li><a href="#international">International Users</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#changes">Changes to This Policy</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ol>
+    </div>
+
+    <!-- 1. About -->
+    <div class="legal-section" id="about">
+      <h2>1. About This Policy</h2>
+      <p>
+        This Privacy Policy describes how Tap Party ("we," "our," or "us") collects, uses, and
+        shares information about you when you use the Tap Party mobile application (the "App")
+        and our website at tap-party.com (the "Site"), collectively the "Services."
+      </p>
+      <p>
+        By using the Services, you agree to the practices described in this policy. If you do not
+        agree, please do not use the Services.
+      </p>
+    </div>
+
+    <!-- 2. Data Collected -->
+    <div class="legal-section" id="data-collected">
+      <h2>2. Information We Collect</h2>
+
+      <h3>Information You Provide</h3>
+      <p>
+        <strong>Player names:</strong> When you start a game, you may enter player names. These names
+        exist only in your device's memory for the duration of the session and are
+        <strong>never transmitted to our servers or any third party.</strong> They are cleared when
+        the app is closed or the session ends.
+      </p>
+      <p>
+        <strong>Support requests:</strong> If you contact us for help, you may provide your name,
+        email address, and a description of your issue. We use this only to respond to your request.
+      </p>
+
+      <h3>Information Collected Automatically</h3>
+      <p>When you use the App, we and our third-party partners may automatically collect:</p>
+      <ul>
+        <li><strong>Device identifiers</strong> — such as your advertising ID (IDFA on iOS, GAID on Android) and device model</li>
+        <li><strong>Operating system</strong> and app version</li>
+        <li><strong>Usage data</strong> — screens viewed, features used, session duration, and crash reports</li>
+        <li><strong>IP address</strong> — used to infer general geographic region (country/state level)</li>
+        <li><strong>In-app events</strong> — such as game starts, challenge completions, and purchase actions</li>
+      </ul>
+      <p>
+        This data is collected through Firebase Analytics and Google AdMob, described in the
+        <a href="#third-parties">Third-Party Services</a> section.
+      </p>
+
+      <h3>Purchase Information</h3>
+      <p>
+        If you make a purchase (Premium subscription, Lifetime, or Party Pack), the transaction is
+        processed by Apple App Store or Google Play. We do not collect or store your payment card
+        details. RevenueCat, our in-app purchase platform, receives purchase receipts and device
+        identifiers to verify and manage your entitlements.
+      </p>
+    </div>
+
+    <!-- 3. How We Use -->
+    <div class="legal-section" id="how-we-use">
+      <h2>3. How We Use Your Information</h2>
+      <p>We use the information we collect to:</p>
+      <ul>
+        <li>Provide and operate the App and its features</li>
+        <li>Verify and manage premium subscriptions and purchases</li>
+        <li>Serve and personalize advertisements (free tier)</li>
+        <li>Analyze app performance, fix bugs, and improve the user experience</li>
+        <li>Understand which features are most used and prioritize development</li>
+        <li>Respond to your support inquiries</li>
+        <li>Comply with legal obligations</li>
+      </ul>
+      <p>
+        We do not sell your personal information. We do not use your data for purposes
+        incompatible with those listed above without first updating this policy and, where
+        required, obtaining your consent.
+      </p>
+    </div>
+
+    <!-- 4. Third Parties -->
+    <div class="legal-section" id="third-parties">
+      <h2>4. Third-Party Services</h2>
+      <p>
+        The App integrates the following third-party SDKs and services. Each operates under its
+        own privacy policy; we encourage you to review them.
+      </p>
+
+      <div class="third-party-card">
+        <h3>RevenueCat</h3>
+        <p><strong>Purpose:</strong> In-app purchase management and subscription entitlements.</p>
+        <p><strong>Data collected:</strong> Purchase receipts, device identifiers, app version, and platform.</p>
+        <p><strong>Privacy policy:</strong> <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">revenuecat.com/privacy</a></p>
+      </div>
+
+      <div class="third-party-card">
+        <h3>Google AdMob</h3>
+        <p><strong>Purpose:</strong> Serving advertisements to free-tier users.</p>
+        <p>
+          <strong>Data collected:</strong> Advertising ID (IDFA / GAID), device information, IP address,
+          general location, and ad interaction data. AdMob may use this data to serve personalized ads
+          based on your interests.
+        </p>
+        <p>
+          <strong>Opt-out:</strong> You can limit ad tracking in your device settings:
+          iOS: Settings → Privacy &amp; Security → Tracking;
+          Android: Settings → Google → Ads → Delete advertising ID.
+        </p>
+        <p><strong>Privacy policy:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
+      </div>
+
+      <div class="third-party-card">
+        <h3>Firebase (Google)</h3>
+        <p><strong>Purpose:</strong> Analytics, crash reporting, and app performance monitoring.</p>
+        <p>
+          <strong>Data collected:</strong> Device identifiers, app events, session data, crash logs,
+          and operating system information. Data is aggregated and used to improve the App.
+        </p>
+        <p>
+          <strong>Opt-out:</strong> You can disable analytics data collection within the App's
+          Settings screen.
+        </p>
+        <p><strong>Privacy policy:</strong> <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></p>
+      </div>
+
+      <p>
+        Apple App Store and Google Play also collect data about your device and transactions in
+        accordance with their own privacy policies when you download or purchase through those platforms.
+      </p>
+    </div>
+
+    <!-- 5. Sharing -->
+    <div class="legal-section" id="sharing">
+      <h2>5. Data Sharing &amp; Disclosure</h2>
+      <p>We do not sell or rent your personal information. We may share data in the following circumstances:</p>
+      <ul>
+        <li>
+          <strong>Service providers:</strong> With RevenueCat, Google AdMob, and Firebase as described
+          above, solely to operate the Services.
+        </li>
+        <li>
+          <strong>Legal requirements:</strong> If required by law, court order, or government authority,
+          or to protect the rights, property, or safety of Tap Party, our users, or others.
+        </li>
+        <li>
+          <strong>Business transfers:</strong> In connection with a merger, acquisition, or sale of
+          assets, your data may be transferred. We will notify you via the App or this page before
+          such a transfer occurs.
+        </li>
+        <li>
+          <strong>With your consent:</strong> For any other purpose, with your explicit consent.
+        </li>
+      </ul>
+    </div>
+
+    <!-- 6. Advertising -->
+    <div class="legal-section" id="advertising">
+      <h2>6. Advertising &amp; Tracking</h2>
+      <p>
+        Free-tier users see advertisements served by Google AdMob. These ads may be personalized
+        based on your device's advertising identifier and general interests. Premium users
+        (<strong>any paid plan</strong>) do not see ads.
+      </p>
+      <p>
+        <strong>App Tracking Transparency (iOS 14+):</strong> On iOS, we request permission before
+        accessing your IDFA for personalized advertising. If you decline, you may still see ads but
+        they will not be personalized.
+      </p>
+      <p>
+        <strong>Google's ad personalization:</strong> You can review and adjust Google's ad
+        personalization settings at
+        <a href="https://adssettings.google.com" target="_blank" rel="noopener">adssettings.google.com</a>.
+      </p>
+    </div>
+
+    <!-- 7. Retention -->
+    <div class="legal-section" id="retention">
+      <h2>7. Data Retention</h2>
+      <p>
+        <strong>Player names:</strong> Not retained. Cleared from memory at session end.
+      </p>
+      <p>
+        <strong>Purchase records:</strong> RevenueCat retains purchase history as long as your account
+        is active or as required to resolve disputes and comply with legal obligations.
+      </p>
+      <p>
+        <strong>Analytics data:</strong> Firebase retains event data for up to 14 months by default,
+        after which it is automatically deleted or anonymized.
+      </p>
+      <p>
+        <strong>Support correspondence:</strong> Retained for up to 2 years after your last contact,
+        then deleted.
+      </p>
+      <p>
+        To request deletion of any data associated with you, contact us at
+        <a href="mailto:support@tap-party.com">support@tap-party.com</a>.
+      </p>
+    </div>
+
+    <!-- 8. Children -->
+    <div class="legal-section" id="children">
+      <h2>8. Children's Privacy</h2>
+      <p>
+        Tap Party is an adult drinking game intended exclusively for users who are of legal
+        drinking age in their jurisdiction (21+ in the United States; 18+ in most other countries).
+        The App displays an age gate at launch requiring confirmation of legal drinking age.
+      </p>
+      <p>
+        <strong>We do not knowingly collect personal information from anyone under the age of 18.</strong>
+        If we become aware that a person under 18 has provided us with personal information, we will
+        take steps to delete it promptly. If you believe a minor has used the App, please contact us
+        at <a href="mailto:support@tap-party.com">support@tap-party.com</a>.
+      </p>
+      <p>
+        This App is not directed at children and is not designed to appeal to children.
+        It is not compliant with COPPA (Children's Online Privacy Protection Act) or similar
+        children's privacy frameworks, and its use by minors is strictly prohibited.
+      </p>
+    </div>
+
+    <!-- 9. Your Rights -->
+    <div class="legal-section" id="your-rights">
+      <h2>9. Your Privacy Rights</h2>
+      <p>Depending on where you live, you may have the following rights regarding your personal data:</p>
+      <ul>
+        <li><strong>Access:</strong> Request a copy of the personal data we hold about you.</li>
+        <li><strong>Correction:</strong> Ask us to correct inaccurate data.</li>
+        <li><strong>Deletion:</strong> Request that we delete your personal data, subject to legal retention requirements.</li>
+        <li><strong>Portability:</strong> Receive your data in a structured, machine-readable format.</li>
+        <li><strong>Opt-out of personalized ads:</strong> Adjust tracking via your device settings (see <a href="#advertising">Section 6</a>).</li>
+        <li><strong>Withdraw consent:</strong> Where processing is based on consent, withdraw it at any time without affecting prior processing.</li>
+      </ul>
+      <p>
+        To exercise any of these rights, contact us at
+        <a href="mailto:support@tap-party.com">support@tap-party.com</a>.
+        We will respond within 30 days. We may need to verify your identity before processing your request.
+      </p>
+    </div>
+
+    <!-- 10. CCPA -->
+    <div class="legal-section" id="california">
+      <h2>10. California Residents (CCPA / CPRA)</h2>
+      <p>
+        If you are a California resident, the California Consumer Privacy Act (CCPA) as amended by
+        the California Privacy Rights Act (CPRA) grants you additional rights:
+      </p>
+      <ul>
+        <li><strong>Right to Know:</strong> The categories and specific pieces of personal information we collect, use, and share.</li>
+        <li><strong>Right to Delete:</strong> Request deletion of your personal information, with limited exceptions.</li>
+        <li><strong>Right to Correct:</strong> Request correction of inaccurate personal information.</li>
+        <li><strong>Right to Opt-Out:</strong> We do not sell or share your personal information for cross-context behavioral advertising. No opt-out is currently required, but you may contact us to confirm.</li>
+        <li><strong>Right to Non-Discrimination:</strong> We will not discriminate against you for exercising your CCPA rights.</li>
+      </ul>
+      <p>
+        To submit a CCPA request, email
+        <a href="mailto:support@tap-party.com">support@tap-party.com</a>
+        with "CCPA Request" in the subject line. We will verify your identity and respond within
+        45 days (extendable by an additional 45 days with notice).
+      </p>
+      <p>
+        <strong>Categories of personal information collected in the past 12 months:</strong>
+        Identifiers (device IDs, IP address); Commercial information (purchase records);
+        Internet/network activity (app usage, crash data). We do not collect sensitive personal
+        information as defined by the CPRA.
+      </p>
+    </div>
+
+    <!-- 11. International -->
+    <div class="legal-section" id="international">
+      <h2>11. International Users</h2>
+      <p>
+        Tap Party is operated from the United States. If you access the Services from outside
+        the US, your information may be transferred to, stored, and processed in the United States
+        or other countries where our service providers operate.
+      </p>
+      <p>
+        <strong>European Economic Area, United Kingdom, and Switzerland:</strong> If you are located
+        in these regions, the legal basis for processing your data is:
+      </p>
+      <ul>
+        <li><strong>Contractual necessity</strong> — to provide the features you use (e.g., purchase verification)</li>
+        <li><strong>Legitimate interests</strong> — for analytics and app improvement, balanced against your rights</li>
+        <li><strong>Consent</strong> — for personalized advertising, obtained via the App Tracking Transparency prompt (iOS) or equivalent</li>
+      </ul>
+      <p>
+        EEA/UK residents have rights under the GDPR / UK GDPR including access, rectification,
+        erasure, restriction, portability, and the right to object. To exercise these rights, contact
+        <a href="mailto:support@tap-party.com">support@tap-party.com</a>.
+        You also have the right to lodge a complaint with your local supervisory authority.
+      </p>
+      <p>
+        By using the Services from outside the US, you consent to the transfer of your information
+        to the United States, which may have different data protection rules than your country.
+      </p>
+    </div>
+
+    <!-- 12. Security -->
+    <div class="legal-section" id="security">
+      <h2>12. Security</h2>
+      <p>
+        We take reasonable technical and organizational measures to protect information against
+        unauthorized access, alteration, disclosure, or destruction. These measures include using
+        reputable third-party platforms (RevenueCat, Firebase, Google) that maintain their own
+        security certifications.
+      </p>
+      <p>
+        However, no method of transmission over the internet or electronic storage is 100% secure.
+        We cannot guarantee absolute security and encourage you to use the latest version of the App
+        and your device's operating system.
+      </p>
+    </div>
+
+    <!-- 13. Changes -->
+    <div class="legal-section" id="changes">
+      <h2>13. Changes to This Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time. When we do, we will update the
+        "Last Updated" date at the top of this page. For material changes, we will provide notice
+        within the App or via a prominent notice on this page.
+      </p>
+      <p>
+        Your continued use of the Services after any changes constitutes acceptance of the updated policy.
+        We encourage you to review this page periodically.
+      </p>
+    </div>
+
+    <!-- 14. Contact -->
+    <div class="legal-section" id="contact">
+      <h2>14. Contact Us</h2>
+      <p>
+        If you have any questions, concerns, or requests regarding this Privacy Policy or your
+        personal data, please contact us:
+      </p>
+      <div class="contact-card">
+        <p><strong>Tap Party</strong></p>
+        <p>Email: <a href="mailto:support@tap-party.com">support@tap-party.com</a></p>
+        <p>Website: <a href="https://tap-party.com">tap-party.com</a></p>
+      </div>
+      <p style="margin-top: 16px;">
+        We aim to respond to all privacy-related inquiries within <strong>30 days</strong>.
+        For CCPA requests, the statutory period is 45 days (extendable to 90 days with notice).
+      </p>
+    </div>
+
+  </div><!-- /legal-body -->
+
+  <!-- ── Age Notice ── -->
+  <div class="age-notice">
+    <div class="container">
+      <p>🔞 Tap Party is intended for adults of legal drinking age. Please drink responsibly. Never drink and drive.</p>
+    </div>
+  </div>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <a href="index.html">
+          <img src="assets/images/logo-main2.png" alt="Tap Party" class="footer__logo" />
+        </a>
+        <ul class="footer__links">
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="support.html">Support</a></li>
+        </ul>
+      </div>
+      <p class="footer__copy">
+        &copy; <script>document.write(new Date().getFullYear())</script> Tap Party. All rights reserved.
+      </p>
     </div>
   </footer>
+
 </body>
 </html>
