@@ -3,54 +3,746 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tap Party Support</title>
-  <link rel="stylesheet" href="./styles.css" />
+  <meta name="description" content="Tap Party Support — get help with purchases, gameplay, account issues, and more." />
+  <title>Support — Tap Party</title>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ── Support page layout ── */
+    .support-hero {
+      padding: 64px 0 48px;
+      text-align: center;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .support-hero__eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-purple);
+      margin-bottom: 12px;
+    }
+    .support-hero__title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      color: var(--text-heading);
+      margin-bottom: 14px;
+    }
+    .support-hero__sub {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ── Page body ── */
+    .support-body {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    /* ── Section headings ── */
+    .support-section {
+      margin-bottom: 56px;
+    }
+    .support-section__label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-purple);
+      margin-bottom: 10px;
+    }
+    .support-section__title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-heading);
+      margin-bottom: 24px;
+    }
+
+    /* ── Quick help cards ── */
+    .quick-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+    .quick-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 24px 20px;
+      text-align: center;
+      text-decoration: none;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .quick-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(168, 85, 247, 0.4);
+      box-shadow: var(--shadow-purple);
+      color: inherit;
+    }
+    .quick-card__icon {
+      font-size: 2rem;
+      line-height: 1;
+    }
+    .quick-card__title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      line-height: 1.3;
+    }
+    .quick-card__desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ── FAQ accordion ── */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    details.faq-item {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    details.faq-item[open] {
+      border-color: rgba(168, 85, 247, 0.35);
+    }
+    details.faq-item summary {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 22px;
+      cursor: pointer;
+      font-size: 0.925rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      gap: 16px;
+      user-select: none;
+    }
+    details.faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item__chevron {
+      flex-shrink: 0;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      transition: transform 0.2s;
+    }
+    details.faq-item[open] .faq-item__chevron {
+      transform: rotate(180deg);
+    }
+    .faq-item__body {
+      padding: 0 22px 20px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+    .faq-item__body p { margin-bottom: 10px; }
+    .faq-item__body p:last-child { margin-bottom: 0; }
+    .faq-item__body ol,
+    .faq-item__body ul {
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .faq-item__body a { color: var(--accent-yellow); }
+    .faq-item__body a:hover { color: #fff; }
+    .faq-item__body strong { color: var(--text-primary); }
+
+    /* ── Contact section ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .contact-option {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .contact-option__icon {
+      font-size: 1.75rem;
+      line-height: 1;
+    }
+    .contact-option__title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-heading);
+    }
+    .contact-option__desc {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .contact-option__action {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--accent-yellow);
+      text-decoration: none;
+      margin-top: 4px;
+      transition: color 0.2s;
+    }
+    .contact-option__action:hover { color: #fff; }
+
+    /* ── Response time badge ── */
+    .response-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.25);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent-green);
+      margin-bottom: 24px;
+    }
+    .response-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--accent-green);
+      border-radius: 50%;
+      animation: pulse-dot 2s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* ── Divider ── */
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--card-border), transparent);
+      margin: 0 0 56px;
+      border: none;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .quick-cards {
+        grid-template-columns: 1fr 1fr;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 400px) {
+      .quick-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="./index.html">Tap Party</a>
-      <nav class="nav-links">
-        <a href="./index.html">Home</a>
-        <a href="./privacy.html">Privacy</a>
-        <a href="./terms.html">Terms</a>
-      </nav>
+
+  <!-- ── Navigation ── -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="index.html">
+        <img src="assets/images/logo-main2.png" alt="Tap Party" class="nav__logo" />
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html#how-to-play">How to Play</a></li>
+        <li><a href="index.html#premium">Premium</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="support.html">Support</a></li>
+      </ul>
     </div>
-  </header>
+  </nav>
 
-  <main class="legal-page">
+  <!-- ── Hero ── -->
+  <div class="support-hero">
     <div class="container">
-      <div class="legal-shell">
-        <h1>Support</h1>
-        <p>
-          If you need help with Tap Party, please contact us at:
-        </p>
+      <p class="support-hero__eyebrow">Help Center</p>
+      <h1 class="support-hero__title">How Can We Help?</h1>
+      <p class="support-hero__sub">
+        Find answers to common questions below, or reach out directly —
+        we're a small team and we actually read every message.
+      </p>
+    </div>
+  </div>
 
-        <p>
-          <a href="mailto:support@tap-party.com">support@tap-party.com</a>
-        </p>
+  <!-- ── Body ── -->
+  <div class="support-body">
 
-        <h2>Support Topics</h2>
-        <ul class="support-list">
-          <li>App issues or bugs</li>
-          <li>Purchase or premium-access questions</li>
-          <li>General product inquiries</li>
-          <li>Privacy or legal questions</li>
-        </ul>
+    <!-- Quick Help -->
+    <div class="support-section" id="quick-help">
+      <p class="support-section__label">Quick Help</p>
+      <p class="support-section__title">What do you need help with?</p>
 
-        <h2>Response Time</h2>
-        <p>
-          We will respond as reasonably possible based on volume and support availability.
-        </p>
+      <div class="quick-cards">
+        <a href="#purchases-faq" class="quick-card">
+          <div class="quick-card__icon">🛒</div>
+          <div class="quick-card__title">Purchases &amp; Billing</div>
+          <div class="quick-card__desc">Restore a purchase, cancel a sub, or fix a billing issue</div>
+        </a>
+        <a href="#gameplay-faq" class="quick-card">
+          <div class="quick-card__icon">🎮</div>
+          <div class="quick-card__title">Gameplay &amp; Features</div>
+          <div class="quick-card__desc">How the game works, players, challenges, and intensity levels</div>
+        </a>
+        <a href="#technical-faq" class="quick-card">
+          <div class="quick-card__icon">🔧</div>
+          <div class="quick-card__title">Technical Issues</div>
+          <div class="quick-card__desc">App crashes, freezing, or something not working right</div>
+        </a>
       </div>
     </div>
-  </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© 2026 Tap Party</div>
-      <div><a href="./index.html">Back to Home</a></div>
+    <hr class="section-divider" />
+
+    <!-- Purchases FAQ -->
+    <div class="support-section" id="purchases-faq">
+      <p class="support-section__label">Purchases &amp; Billing</p>
+      <p class="support-section__title">Subscriptions, Purchases &amp; Refunds</p>
+
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>
+            How do I restore my premium purchase on a new device?
+            <span class="faq-item__chevron">▼</span>
+          </summary>
+          <div class="faq-item__body">
+            <p>
+              Open Tap Party and go to <strong>Settings</strong> from the home screen. Tap
+              <strong>Restore Purchases</strong>. Make sure you're signed in to the same
+              Apple ID or Google account you used when you originally purchased.
+            </p>
+            <p>
+              Your purchase is tied to your app store account — not the device — so it will
+              restore on any device using the same account.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            How do I cancel my Premium subscription?
+            <span class="faq-item__chevron">▼</span>
+          </summary>
+          <div class="faq-item__body">
+            <p>Subscriptions are managed through your device's app store, not the app itself:</p>
+            <p><strong>On iPhone / iPad (iOS):</strong></p>
+            <ol>
+              <li>Open <strong>Settings</strong> → tap your name at the top</li>
+              <li>Tap <strong>Subscriptions</strong></li>
+              <li>Find <strong>Tap Party</strong> and tap it</li>
+              <li>Tap <strong>Cancel Subscription</strong></li>
+            </ol>
+            <p><strong>On Android:</strong></p>
+            <ol>
+              <li>Open the <strong>Google Play Store</strong></li>
+              <li>Tap your profile icon → <strong>Payments &amp; subscriptions</strong> → <strong>Subscriptions</strong></li>
+              <li>Find <strong>Tap Party</strong> and tap <strong>Cancel</strong></li>
+            </ol>
+            <p>
+              You'll keep premium access until the end of your current billing period.
+              Cancellation stops future charges only.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            How does the Party Pack work?
+            <span class="faq-item__chevron">▼</span>
+          </summary>
+          <div class="faq-item__body">
+            <p>
+              The <strong>Party Pack ($0.99)</strong> gives you full premium access for
+              <strong>1 hour</strong> from the moment of purchase — perfect for a single session.
+              It does not auto-renew. Once the hour is up, the app returns to the free tier.
+            </p>
+            <p>
+              You can purchase another Party Pack at any time, or upgrade to a monthly
+              subscription or lifetime purchase if you use the app regularly.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            I was charged but I didn't get premium access. What do I do?
+            <span class="faq-item__chevron">▼</span>
+          </summary>
+          <div class="faq-item__body">
+            <p>
+              First, try <strong>Restore Purchases</strong> in the app's Settings screen — this
+              usually resolves it immediately.
+            </p>
+            <p>
+              If that doesn't work, make sure you're connected to the internet and try again.
+              Entitlement checks require a brief connection to our purchase server.
+            </p>
+            <p>
+              Still stuck? Email us at
+              <a href="mailto:support@tap-party.com">support@tap-party.com</a> with your
+              order confirmation or receipt and we'll sort it out.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            Can I get a refund?
+            <span class="faq-item__chevron">▼</span>
+          </summary>
+          <div class="faq-item__body">
+            <p>
+              Refunds are handled by the platform you purchased through, not by us directly:
+            </p>
+            <ul>
+              <li>
+                <strong>Apple:</strong> Visit
+                <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>
+                and select your Tap Party purchase.
+              </li>
+              <li>
+                <strong>Google Play:</strong> Go to
+                <a href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener">play.google.com/store/account/subscriptions</a>
+                and request a refund there.
+              </li>
+            </ul>
+            <p>
+              If you're having trouble with the platform's refund process, email us at
+              <a href="mailto:support@tap-party.com">support@tap-party.com</a> and we'll
+              help advocate for you where we can.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            What's included in the Lifetime purchase?
+            <span class="faq-item__chevron">▼</span>
+          </summary>
+          <div class="faq-item__body">
+            <p>
+              The <strong>Lifetime Access ($24.99)</strong> one-time purchase gives you all
+              current and future premium content permanently — including all 158+ premium
+              challenges, every interactive mini-game, no ads, and unlimited players.
+              No recurring charge, ever.
+            </p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+
+    <hr class="section-divider" />
+
+    <!-- Gameplay FAQ -->
+    <div class="support-section" id="gameplay-faq">
+      <p class="support-section__label">Gameplay &amp; Features</p>
+      <p class="support-section__title">Playing Tap Party</p>
+
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>
+            How many players can I add?
+            <span class="faq-item__chevron">▼</span>
+          </summary>
+          <div class="faq-item__body">
+            <p>
+              <strong>Free tier:</strong> Up to 6 players per game.<br />
+              <strong>Premium (any paid plan):</strong> Unlimited players.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            What are the intensity levels?
+            <span class="faq-item__chevron">▼</span>
+          </summary>
+          <div class="faq-item__body">
+            <p>When setting up a game you choose from three intensity levels:</p>
+            <ul>
+              <li><strong>Chill</strong> — Light, easy-going challenges. Great for new groups or a relaxed vibe.</li>
+              <li><strong>Normal</strong> — The balanced default. A good mix of fun and daring.</li>
+              <li><strong>Lush</strong> — Bold, more daring challenges for groups ready to turn it up.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            What's the difference between Free and Premium challenges?
+            <span class="faq-item__chevron">▼</span>
+          </summary>
+          <div class="faq-item__body">
+            <p>
+              The free tier includes a solid set of challenges to get the party started.
+              Premium unlocks the full library of <strong>332 challenges</strong> — including
+              158 premium-exclusive challenges across all categories and intensity levels.
+            </p>
+            <p>
+              Premium also unlocks all interactive mini-games (dice roller, coin flip, timer,
+              and random player selector) which are not available on the free tier.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            Do I need an internet connection to play?
+            <span class="faq-item__chevron">▼</span>
+          </summary>
+          <div class="faq-item__body">
+            <p>
+              <strong>Mostly no.</strong> Core gameplay — challenges, dice, coin flip, timer —
+              works fully offline once the app is installed.
+            </p>
+            <p>
+              A brief internet connection is needed to <strong>verify purchases</strong> when
+              you first launch after buying premium, and for ads on the free tier.
+              After entitlements are confirmed, you can play offline.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            How does the Random Player / Roulette work?
+            <span class="faq-item__chevron">▼</span>
+          </summary>
+          <div class="faq-item__body">
+            <p>
+              Certain premium challenges trigger the <strong>Random Player</strong> mini-game —
+              an animated roulette wheel that spins through all active players and lands on one
+              randomly. That player becomes the target of the challenge.
+            </p>
+            <p>This feature requires a Premium plan.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            Can player names be saved between sessions?
+            <span class="faq-item__chevron">▼</span>
+          </summary>
+          <div class="faq-item__body">
+            <p>
+              Currently, player names are entered fresh each session and are not saved to your
+              device or our servers. This is by design — each game is a fresh start, and it
+              keeps your data private.
+            </p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+
+    <hr class="section-divider" />
+
+    <!-- Technical FAQ -->
+    <div class="support-section" id="technical-faq">
+      <p class="support-section__label">Technical Issues</p>
+      <p class="support-section__title">Troubleshooting</p>
+
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>
+            The app is crashing or freezing. What should I do?
+            <span class="faq-item__chevron">▼</span>
+          </summary>
+          <div class="faq-item__body">
+            <p>Try these steps in order:</p>
+            <ol>
+              <li><strong>Force-close and reopen</strong> the app.</li>
+              <li><strong>Restart your device.</strong></li>
+              <li><strong>Check for an app update</strong> in the App Store or Google Play — we push fixes regularly.</li>
+              <li><strong>Reinstall the app</strong> — your purchase is tied to your store account, so reinstalling won't lose it. Use Restore Purchases afterward.</li>
+            </ol>
+            <p>
+              If the issue persists, email us at
+              <a href="mailto:support@tap-party.com">support@tap-party.com</a> with your
+              device model and OS version so we can investigate.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            The dice / coin flip / timer animation isn't showing up.
+            <span class="faq-item__chevron">▼</span>
+          </summary>
+          <div class="faq-item__body">
+            <p>
+              These interactive mini-games are <strong>premium features</strong>. If you're on
+              the free tier they won't appear. Upgrade to any paid plan to unlock them.
+            </p>
+            <p>
+              If you have premium and the animations aren't loading, try force-closing the app
+              and reopening it. If that doesn't help, reinstall the app and restore your purchase.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            Ads are still showing even though I bought Premium.
+            <span class="faq-item__chevron">▼</span>
+          </summary>
+          <div class="faq-item__body">
+            <p>
+              Go to <strong>Settings → Restore Purchases</strong> inside the app. This
+              re-confirms your entitlement with our purchase server and should immediately
+              remove ads.
+            </p>
+            <p>
+              Make sure you're signed in to the same Apple ID or Google account used during
+              purchase. If ads persist after restoring, email us at
+              <a href="mailto:support@tap-party.com">support@tap-party.com</a>.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            How do I report a bug or suggest a feature?
+            <span class="faq-item__chevron">▼</span>
+          </summary>
+          <div class="faq-item__body">
+            <p>
+              We love hearing from players. Email us at
+              <a href="mailto:support@tap-party.com">support@tap-party.com</a> with:
+            </p>
+            <ul>
+              <li>A description of the bug or feature idea</li>
+              <li>Your device model and OS version (for bugs)</li>
+              <li>Steps to reproduce the issue (if applicable)</li>
+            </ul>
+            <p>Every report is read and helps make the game better for everyone.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            Which devices and OS versions are supported?
+            <span class="faq-item__chevron">▼</span>
+          </summary>
+          <div class="faq-item__body">
+            <p>
+              Tap Party is built with React Native (Expo) and supports:
+            </p>
+            <ul>
+              <li><strong>iOS:</strong> iPhone and iPad running iOS 15 or later</li>
+              <li><strong>Android:</strong> Devices running Android 10 (API level 29) or later</li>
+            </ul>
+            <p>
+              For the best experience, keep your device and the app updated to the latest versions.
+            </p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+
+    <hr class="section-divider" />
+
+    <!-- Contact Section -->
+    <div class="support-section" id="contact">
+      <p class="support-section__label">Still Need Help?</p>
+      <p class="support-section__title">Get in Touch</p>
+
+      <div class="response-badge">
+        <span class="response-dot"></span>
+        Typical response time: within 1–2 business days
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-option">
+          <div class="contact-option__icon">✉️</div>
+          <div class="contact-option__title">Email Support</div>
+          <div class="contact-option__desc">
+            Send us a message for purchase issues, bug reports, feature requests,
+            or anything else. We read every email.
+          </div>
+          <a href="mailto:support@tap-party.com" class="contact-option__action">
+            support@tap-party.com →
+          </a>
+        </div>
+
+        <div class="contact-option">
+          <div class="contact-option__icon">⚖️</div>
+          <div class="contact-option__title">Legal &amp; Privacy</div>
+          <div class="contact-option__desc">
+            For privacy requests, data deletion, CCPA inquiries, or legal matters
+            related to our Terms of Service.
+          </div>
+          <a href="mailto:support@tap-party.com?subject=Privacy%20Request" class="contact-option__action">
+            Send a legal request →
+          </a>
+        </div>
+      </div>
+
+      <p style="margin-top: 24px; font-size: 0.85rem; color: var(--text-muted); text-align: center;">
+        Tap Party is a product of <strong style="color: var(--text-primary);">Janko Tech Ventures LLC</strong>.
+        See our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms of Service</a> for full details.
+      </p>
+    </div>
+
+  </div><!-- /support-body -->
+
+  <!-- ── Age Notice ── -->
+  <div class="age-notice">
+    <div class="container">
+      <p>🔞 Tap Party is intended for adults of legal drinking age. Please drink responsibly. Never drink and drive.</p>
+    </div>
+  </div>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <a href="index.html">
+          <img src="assets/images/logo-main2.png" alt="Tap Party" class="footer__logo" />
+        </a>
+        <ul class="footer__links">
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="support.html">Support</a></li>
+        </ul>
+      </div>
+      <p class="footer__copy">
+        &copy; <script>document.write(new Date().getFullYear())</script> Janko Tech Ventures LLC. Tap Party is a brand of Janko Tech Ventures LLC. All rights reserved.
+      </p>
     </div>
   </footer>
+
 </body>
 </html>
