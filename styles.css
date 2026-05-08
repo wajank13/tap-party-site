@@ -135,6 +135,20 @@ section {
   color: var(--text-heading);
 }
 
+/* ── Hero Banner ─────────────────────────────────────────── */
+.hero-banner {
+  width: 100%;
+  line-height: 0;
+}
+
+.hero-banner__img {
+  display: block;
+  width: 100%;
+  max-width: 1024px;
+  height: auto;
+  margin: 0 auto;
+}
+
 /* ── Hero ─────────────────────────────────────────────────── */
 .hero {
   text-align: center;
